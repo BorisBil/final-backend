@@ -29,6 +29,17 @@ router.post('/', function(req, res, next) {
     Task.create(req.body)
         .then(createdTask => res.status(200).json(createdTask))
         .catch(err => next(err));
-    });
+});
 
+/** DELETE COURSE */
+router.delete('/:id', function(req, res, next) {
+    Task.destroy({
+        where: {
+            id: req.params.id
+        }
+    })
+    .then(() => res.status(200).json("Deleted a task!"))
+    .catch(err => next(err));
+});
+  
 module.exports = router;
