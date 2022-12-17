@@ -30,4 +30,12 @@ router.post('/', ash(async(req, res) => {
     res.status(200).json(newEmployee);
 }));
 
+/** DELETE EMPLOYEE */
+router.delete('/:id', ash(async(req, res) => {
+    await Employee.destroy(
+        { where: { id: req.params.id} }
+    );
+    res.status(200).json("Instructor deleted");
+}));
+
 module.exports = router;
