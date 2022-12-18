@@ -8,12 +8,12 @@ const Task = db.define("task", {
     },
     description: {
         type: DataTypes.STRING,
-        allowNull: false
     },
     priority: {
         type: DataTypes.STRING,
+        allowNull: false
     },
-    completed: {
+    completion: {
         type: DataTypes.STRING,
     }
 });
